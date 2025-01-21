@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-     fontSize: {
+    fontSize: {
       smallp: '10px',
       bigp: '12px',
       title: '16px',
@@ -15,18 +15,20 @@ export default {
       '4xl': '2.441rem',
       '5xl': '3.052rem',
     },
-     flexBasis: {
-        '1/7': '14.2857143%',
-        '2/7': '28.5714286%',
-        '3/7': '42.8571429%',
-        '4/7': '57.1428571%',
-        '5/7': '71.4285714%',
-        '6/7': '85.7142857%',
-      },
+    flexBasis: {
+      '1/7': '14.2857143%',
+      '2/7': '28.5714286%',
+      '3/7': '42.8571429%',
+      '4/7': '57.1428571%',
+      '5/7': '71.4285714%',
+      '6/7': '85.7142857%',
+    },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        basePurple: '#7C1FD1',
+        baseBlack: '#0F172A',
       },
     },
   },
