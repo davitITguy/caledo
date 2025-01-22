@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Modal from 'react-bootstrap/Modal';
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -183,7 +183,10 @@ export default function CalModal(props) {
       key: 35,
     },
   ];
+  const [activeMonthDate, setActiveMonthDate] = useState(null);
+
   return (
+
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <style type="text/css">
         {`
@@ -192,30 +195,32 @@ export default function CalModal(props) {
       color: white;
       border-radius:15px;
       width:100%;
-    }`}
+    }
+    
+    `}
       </style>
       <Container>
         <Row className="d-flex align-items-center justify-content-around ">
           <Col className="d-flex justify-start align-items-center">
-            <p className="m-0 p-0">აირჩიე თარიღი</p>
+            <p className="m-0 p-0 font-bold">აირჩიე თარიღი</p>
           </Col>
           <Col className="d-flex justify-end align-items-center">
-            <Image src={Close} width={50} height={50} alt="Close" />
+            <Image src={Close} width={50} height={50} alt="Close" onClick={props.onHide}/>
           </Col>
         </Row>
       </Container>
       <Container>
-        <Row>
+        <Row className='mb-1.5 mt-1.5'>
           <Col>
             <hr></hr>
           </Col>
         </Row>
-        <Row className="d-flex align-items-center justify-content-around">
+        <Row className="d-flex align-items-center justify-content-around mb-2.5">
           <Col className="d-flex justify-start align-items-center">
             <Image src={LeftArw} width={24} height={105} alt="left arw" />
           </Col>
           <Col className="d-flex justify-center align-items-center ">
-            <p className="m-0 p-0 whitespace-nowrap">ოქტომბერი 2024</p>
+            <p className="m-0 p-0 whitespace-nowrap font-bold">ოქტომბერი 2024</p>
           </Col>
           <Col className="d-flex justify-end align-items-center">
             <Image src={RightArw} width={24} height={105} alt="right arw" />
@@ -226,22 +231,23 @@ export default function CalModal(props) {
         <Row>
           {weekDays.map((el) => (
             <Col
-              className="d-flex justify-center align-items-center rounded-2xl max-w-10 max-h-12 px-1"
+              className="d-flex justify-center align-items-center rounded-2xl max-w-12 max-h-10 px-1 mb-2.5"
               key={el.key}
             >
-              <p key={el.key}>{el.day}</p>
+              <p>{el.day}</p>
             </Col>
           ))}
         </Row>
       </Container>
       <Container>
-        <Row>
-          {monthDates.map((el) => (
+        <Row className='d-flex justify-center align-items-center'>
+          {monthDates.map((el, ind) => (
             <Col
-              className="d-flex justify-center align-items-center rounded-2xl max-w-10 max-h-12 px-3"
+              className={`d-flex justify-center align-items-center rounded-2xl  px-3 transition-colors duration-300 cursor-pointer min-w-12 min-h-10 ${activeMonthDate === ind && "bg-baseBlack text-white"}`}
               key={el.key}
+              onClick={()=>setActiveMonthDate(ind)}
             >
-              <p key={el.key}>{el.date}</p>
+              <p className='mb-0'>{el.date}</p>
             </Col>
           ))}
         </Row>
@@ -249,12 +255,12 @@ export default function CalModal(props) {
       <Container>
         <Row>
           <Col>
-            <Button className="text-title " variant="send">
+            <Button className="text-title transition-colors duration-300 cursor-pointer mt-3.5 mb-6" variant="send">
               გაგრძელება
             </Button>
           </Col>
         </Row>
-      </Container>
-    </Modal>
+        </Container>
+      </Modal>
   );
 }

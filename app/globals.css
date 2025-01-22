@@ -13,3 +13,6 @@
     --foreground: #ededed;
   }
 }
+.lameModal{
+  border-radius: 20px !important;
+}

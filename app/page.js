@@ -214,8 +214,7 @@ export default function Home() {
 
   const [modalShow, setModalShow] = React.useState(false);
 
-  const onHourClick = (hourInd) => {    
-    console.log(activeHours.length)
+  const onHourClick = (hourInd) => {
     if (activeHours.length !== 2) {
       setActiveHours((prev) => ([...prev, hourInd]))
     } else {
@@ -301,7 +300,7 @@ export default function Home() {
         <Row className="d-flex mb-4.2">
           <Row>
             <Col className="mb-5">
-              <h2 className="text-bigTitle">აირჩიე დრო</h2>
+              <h2 className="text-bigTitle font-bold">აირჩიე დრო</h2>
             </Col>
           </Row>
 
@@ -325,7 +324,7 @@ export default function Home() {
       <Container>
         <Row>
           {date.map((el, ind) => (
-            <Col onClick={()=> setActiveDate(ind)} className={`card d-flex align-items-center justify-content-center m-2 cursor-pointer ${activeDate === ind && '!bg-basePurple text-white'}`} key={ind + el.key}>
+            <Col onClick={()=> setActiveDate(ind)} className={`card d-flex align-items-center justify-content-center m-2 cursor-pointer transition-colors duration-300  ${activeDate === ind && '!bg-basePurple text-white'}`} key={ind + el.key}>
               <p className="text-bigp">
                 {el.date}
               </p>
@@ -347,7 +346,7 @@ export default function Home() {
         <Row className="card-holder">
           {hours.map((el, ind) => (
             <Col
-              className={`hover:#7C1FD1 card-hour d-flex flex-col justify-center align-items-center w-full max-w-9 m-2 cursor-pointer ${activeHours.includes(ind) && "!bg-baseBlack text-white"}`}
+              className={`hover:#7C1FD1 card-hour d-flex flex-col justify-center align-items-center w-full max-w-9 m-2 cursor-pointer transition-colors duration-300  ${activeHours.includes(ind) && "!bg-baseBlack text-white"}`}
               key={el.key}
               onClick={()=>onHourClick(ind)}
             >
