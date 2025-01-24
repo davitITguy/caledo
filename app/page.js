@@ -233,6 +233,18 @@ export default function Home() {
       border-radius:15px;
       width:100%;
     }
+    .btn-send:active{
+      background-color: #7C1FD1;
+      color: white;
+    }
+    .btn-send:focus{
+      background-color: #7C1FD1;
+      color: white;
+    }
+    .btn-send:hover{
+      background-color: #7C1FD1;
+      color: white;
+    }
 
     .card{
     border:1px solid #333;
@@ -247,7 +259,6 @@ export default function Home() {
     margin:0;
     }
    
-
     .card-hour{
     border:1px solid #333;
     border-radius:15px;
@@ -255,8 +266,6 @@ export default function Home() {
     height:55px;
     text-align:center;
 
-
-    
     }
     .card-holder{
     display:flex;

@@ -190,11 +190,23 @@ export default function CalModal(props) {
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <style type="text/css">
         {`
-    .btn-send {
+     .btn-send {
       background-color: #7C1FD1;
       color: white;
       border-radius:15px;
       width:100%;
+    }
+    .btn-send:active{
+      background-color: #7C1FD1;
+      color: white;
+    }
+    .btn-send:focus{
+      background-color: #7C1FD1;
+      color: white;
+    }
+    .btn-send:hover{
+      background-color: #7C1FD1;
+      color: white;
     }
     
     `}
